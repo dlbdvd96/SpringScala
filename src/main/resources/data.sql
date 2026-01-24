@@ -1,3 +1,0 @@
-INSERT INTO APP_USER (ID, NAME)
-VALUES (1, 'DAVIDE'),
-       (2, 'MARCO');

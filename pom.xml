@@ -59,10 +59,9 @@
 
         <!-- Database -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>2.4.240</version>
-            <scope>runtime</scope>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.9</version>
         </dependency>
 
         <!-- Test -->
@@ -93,6 +92,12 @@
             <version>2.4.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.4.240</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
@@ -118,7 +123,7 @@
                             </docker>
                             <image>
                                 <name>${image.name}</name>
-                                <tags>${image.name}</tags>
+                                <tags>${image.name}:${project.version}</tags>
                                 <env>
                                     <BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
                                 </env>

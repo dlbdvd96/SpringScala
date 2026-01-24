@@ -15,8 +15,9 @@ class AppRepositoryTest extends SpringTest:
   @Autowired var jdbcClient: JdbcClient = uninitialized
 
   describe("AppRepository on getUserById") {
-
-    jdbcClient.sql("INSERT INTO APP_USER (ID, NAME) VALUES (1, 'DAVIDE')")
+    jdbcClient
+      .sql("INSERT INTO APP_USER (ID, NAME) VALUES (1, 'DAVIDE')")
+      .update()
 
     it("should return the value returned by appRepository") {
       // When
