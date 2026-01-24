@@ -17,7 +17,7 @@ class AppRepositoryTest extends SpringTest:
   describe("AppRepository on getUserById") {
     jdbcClient
       .sql("INSERT INTO APP_USER (ID, NAME) VALUES (1, 'DAVIDE')")
-      .update()
+      .update
 
     it("should return the value returned by appRepository") {
       // When
