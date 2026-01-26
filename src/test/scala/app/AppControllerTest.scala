@@ -1,6 +1,6 @@
 package app
 
-import app.testframework.SpringMvcTest
+import app.testframework.SpringWebMvcTest
 import org.mockito.Mockito.doReturn
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
 import org.springframework.test.context.bean.`override`.mockito.MockitoBean
@@ -8,7 +8,7 @@ import org.springframework.test.context.bean.`override`.mockito.MockitoBean
 import scala.compiletime.uninitialized
 
 @WebMvcTest(Array(classOf[AppController]))
-class AppControllerTest extends SpringMvcTest:
+class AppControllerTest extends SpringWebMvcTest:
 
   @MockitoBean
   var appService: AppService = uninitialized

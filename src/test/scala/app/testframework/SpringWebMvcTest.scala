@@ -7,7 +7,7 @@ import org.springframework.test.web.servlet.client.RestTestClient
 import scala.compiletime.uninitialized
 
 @AutoConfigureRestTestClient
-abstract class SpringMvcTest extends SpringTest:
+abstract class SpringWebMvcTest extends SpringTest:
 
   @Autowired
   var restTestClient: RestTestClient = uninitialized
