@@ -1,22 +1,17 @@
 package app
 
-import app.testframework.SpringTest
+import app.testframework.SpringMvcTest
 import org.mockito.Mockito.doReturn
-import org.scalatest.funspec.AnyFunSpec
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureRestTestClient
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
 import org.springframework.test.context.bean.`override`.mockito.MockitoBean
-import org.springframework.test.web.servlet.client.RestTestClient
 
 import scala.compiletime.uninitialized
 
 @WebMvcTest(Array(classOf[AppController]))
-@AutoConfigureRestTestClient
-class AppControllerTest extends SpringTest:
+class AppControllerTest extends SpringMvcTest:
 
-  @Autowired var restTestClient: RestTestClient = uninitialized
-  @MockitoBean var appService: AppService = uninitialized
+  @MockitoBean
+  var appService: AppService = uninitialized
 
   describe("AppController on /hello uri") {
 

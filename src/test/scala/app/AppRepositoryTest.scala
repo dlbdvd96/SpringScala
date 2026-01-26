@@ -1,18 +1,16 @@
 package app
 
-import app.testframework.SpringTest
-import org.scalatest.funspec.AnyFunSpec
+import app.testframework.SpringDataJdbcTest
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.data.jdbc.test.autoconfigure.DataJdbcTest
-import org.springframework.jdbc.core.simple.JdbcClient
 
 import scala.compiletime.uninitialized
 
 @DataJdbcTest
-class AppRepositoryTest extends SpringTest:
+class AppRepositoryTest extends SpringDataJdbcTest:
 
-  @Autowired var testSubject: AppRepository = uninitialized
-  @Autowired var jdbcClient: JdbcClient = uninitialized
+  @Autowired
+  var testSubject: AppRepository = uninitialized
 
   describe("AppRepository on getUserById") {
     jdbcClient
