@@ -19,9 +19,9 @@ class AppRepositoryTest extends SpringDataJdbcTest:
 
     it("should return the value returned by appRepository") {
       // When
-      val actualResult: Array[User] = testSubject.getUserById(1)
+      val actualResult: Option[User] = testSubject.getUserById(1)
 
       // Then
-      actualResult shouldEqual Array(User(1, "DAVIDE"))
+      actualResult.value shouldEqual User(1, "DAVIDE")
     }
   }

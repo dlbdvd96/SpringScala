@@ -1,12 +1,10 @@
 package app
 
 import app.testframework.Test
-import com.bdmendes.smockito.Mock
-import org.mockito.Mockito.doReturn
 
 class AppServiceTest extends Test:
 
-  val mockAppRepository: Mock[AppRepository] = mock[AppRepository]
+  val mockAppRepository: AppRepository = mock[AppRepository]
   val testSubject = AppService(mockAppRepository)
 
   describe("AppService on getData") {

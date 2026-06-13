@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param
 trait AppRepository extends Repository[User, Int]:
 
   @Query("SELECT * FROM APP_USER WHERE ID=:id")
-  def getUserById(@Param("id") id: Int): Array[User]
+  def getUserById(@Param("id") id: Int): Option[User]
 
   @Query("SELECT * FROM APP_USER")
   def getAllUsers: Array[User]
